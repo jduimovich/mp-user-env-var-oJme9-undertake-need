@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: mongo-mongo-pacman-6eyc
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:oJme9-mongo-mongo-pacman-6eyc
+      - image: quay.io/redhat-appstudio/user-workload@sha256:5236bc58a0a6ecaec6ac813cc3f0b73703bf411c87a5e8c796011ef3a2b99ad3
         imagePullPolicy: Always
         name: container-image
         ports:
