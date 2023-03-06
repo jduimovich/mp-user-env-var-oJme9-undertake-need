@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: mongo-mongo-pacman-6eyc
+  namespace: jduimovich-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload:oJme9-mongo-mongo-pacman-6eyc
+        name: container-image
+        resources: {}
+status: {}
