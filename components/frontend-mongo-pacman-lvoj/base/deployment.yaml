@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: frontend-mongo-pacman-lvoj
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: frontend-mongo-pacman-lvoj
+    app.kubernetes.io/part-of: mp-user-env-var
+  name: frontend-mongo-pacman-lvoj
+  namespace: jduimovich-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: frontend-mongo-pacman-lvoj
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: frontend-mongo-pacman-lvoj
+    spec:
+      containers:
+      - env:
+        - name: 'MONGO_SERVICE_HOST '
+          value: mongo-mongo-pacman-6eyc
+        image: quay.io/redhat-appstudio/user-workload:oJme9-frontend-mongo-pacman-lvoj
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        name: container-image
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          tcpSocket:
+            port: 8080
+        resources:
+          limits:
+            cpu: "1"
+            memory: 512Mi
+          requests:
+            cpu: 10m
+            memory: 50Mi
+status: {}
