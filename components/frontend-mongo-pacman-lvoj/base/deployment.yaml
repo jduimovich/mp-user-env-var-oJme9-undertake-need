@@ -26,7 +26,7 @@ spec:
       - env:
         - name: 'MONGO_SERVICE_HOST '
           value: mongo-mongo-pacman-6eyc
-        image: quay.io/redhat-appstudio/user-workload:oJme9-frontend-mongo-pacman-lvoj
+        image: quay.io/redhat-appstudio/user-workload@sha256:3393ea5059631612e97d56a7c3fdbdb1a1664659d4635b968ad5a3f7aab73abc
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
