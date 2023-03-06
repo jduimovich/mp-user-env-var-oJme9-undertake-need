@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: frontend-mongo-pacman-lvoj
+  namespace: jduimovich-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:3393ea5059631612e97d56a7c3fdbdb1a1664659d4635b968ad5a3f7aab73abc
+        name: container-image
+        resources: {}
+status: {}
